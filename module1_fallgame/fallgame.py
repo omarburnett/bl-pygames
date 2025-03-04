@@ -21,7 +21,7 @@ def move(self,keys):
         self.x -=self.playerspeed
     if keys[pygame.K_RIGHT]and self.x < width - self.playerwidth:
         self.x+=self.playerspeed
-def draw(self):
+def draw (self):
     pygame.draw.rect(screen,(0,0,225),
     (self.x,self.y self.width self.height))
 class fallingobjects:
@@ -34,7 +34,16 @@ class fallingobjects:
     def move(self):
         self.y += self.speed
      pygame.draw.rect(screen,(0,0,225),(self.x,self.y self.width self.height))
+player =player()
+falling_object=[]
+score=0
+lives=3
 while running:
+    clock.tick(fps)
+screen.fill(white)
+keys=pygame.key.event.get()
+player.move
+
     for event in pygame.event.get():
 
         if event.type==pygame.quit:
