@@ -42,10 +42,13 @@ while running:
     clock.tick(fps)
 screen.fill(white)
 keys=pygame.key.event.get()
-player.move
+player.move+
 
     for event in pygame.event.get():
 
         if event.type==pygame.quit:
             running=False
 pygame.quit()
+
+
+# instructor note
