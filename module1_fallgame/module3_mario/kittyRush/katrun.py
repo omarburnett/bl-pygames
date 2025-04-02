@@ -43,7 +43,7 @@ import random
 
 
 
-#death
+12#death
 
 
 
