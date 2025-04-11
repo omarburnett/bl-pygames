@@ -7,7 +7,13 @@ pygame.init()
 # Screen dimensions
 screen_width = 800
 screen_height = 600
+
+second_obstacle_width = 600
+second_obstacle_height = 400
+
 screen = pygame.display.set_mode((screen_width, screen_height))
+screen2 = pygame.display.set_mode((second_obstacle_width,second_obstacle_height))
+
 pygame.display.set_caption("Endless Runner")
 
 # Colors
@@ -47,17 +53,14 @@ def draw_player():
 def generate_obstacle():
     obstacle_x = screen_width
     obstacle_y = 500 
-    obstacles.append([obstacle_x, obstacle_y])
+    obstacle_2y=500
+    obstacle_2x=second_obstacle
 
-def generate_obstacle2():
-    obstacle_x = screen_width
-    obstacle_y = 500 
-    obstacles.append([obstacle_x, obstacle_y])
-
-
+    obstacles.append([obstacle_x, obstacle_y,obstacle_2x, obstacle_2y])
+    
 def draw_obstacles():
     for obstacle in obstacles:
-        pygame.draw.rect(screen, black, (obstacle[0], obstacle[1], obstacle_width, obstacle_height))
+        pygame.draw.rect(screen, black, (obstacle[0], obstacle[1],obstacle[0],obstacle[1], obstacle_width, obstacle_height))
 
 def move_obstacles():
     for obstacle in obstacles:
@@ -114,11 +117,10 @@ while running:
             is_jumping = False
 
         # Obstacle generation
-        if len(obstacles) == 0 or obstacles[-1][0] < screen_width - 1100:
+        if len(obstacles) == 0 or obstacles[-1][0] < screen_width - 200:
             generate_obstacle() 
             
-        elif len(obstacles) == 0 or obstacles[-1][0] < screen_width - 200:
-                generate_obstacle2()
+       
 
         # Move background
         background_x -= background_speed
